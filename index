@@ -1,0 +1,144 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+
+  <style>
+  
+    /* GET RID OFF TUMBLR BS */
+    
+    #tumblr_controls,
+    .controls {
+      display: none !important;
+    }
+
+    #tumblr_controls {
+      display: none;
+    }
+
+    iframe:first-child {
+      display: none !important;
+    }
+
+    iframe:nth-child(2) {
+      display: none;
+    }
+
+    .app-cta-button {
+      opacity: 0 !important;
+    }
+
+    .tmblr-iframe--app-cta-button {
+      display: none !important;
+    }
+
+    .tmblr-iframe-compact .tmblr-iframe--unified-controls {
+      display: none;
+    }
+    
+    #search {
+      display: none;
+    }
+    
+    /* HTML & BODY */
+
+    html,
+    body {
+      margin: 0;
+      background-color: black;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 50px;
+      margin: 0;
+    }
+    
+    /* CENTERED DIV FOR CONTENT */
+
+    .outer {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .middle {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+      width: 700px;
+      text-align: center;
+      color: white;
+      /* Whatever width you want */
+    }
+    
+    /* LINKS DECORATION */
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    /* OTHER */
+
+    .logotype {
+      min-height: 262px;
+      padding-bottom: 20px;
+    }
+     
+    /* MOBILE */
+    
+    @media only screen and (max-width: 1000px) {
+      h1 {
+        font-size: 48px;
+        line-height: 72px;
+      }
+    }
+
+  </style>
+
+  <body>
+
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+
+          <!-- LOGOTYPE -->
+
+          <div class="logotype"><img src="https://i.imgur.com/vhVfgRN.png" width="100%"></div>
+
+          <!-- LINKS -->
+
+          <h1><a href="https://terramsc.tumblr.com/u-ok">18.11.2021 You forgot / It's ok</a></h1>
+          <h1><a href="https://terramsc.tumblr.com/untitled1">(in works) untitled</a></h1>
+          <h1><a href="https://terramsc.tumblr.com/for-zofia">(in works) For Zofia</a></h1>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>
