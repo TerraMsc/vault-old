@@ -6,6 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
 
   <style>
@@ -43,19 +46,21 @@
     #search {
       display: none;
     }
-    
+
     /* HTML & BODY */
-    
+
     html,
     body {
       margin: 0;
       background-color: #B16791;
     }
 
-    html, body,{
+    html,
+    body,
+      {
       font-family: 'Inter', sans-serif;
     }
-    
+
     /* MAIN CENTERED DIV WITH A PIC */
 
     .outer {
@@ -75,20 +80,21 @@
     .inner {
       margin-left: auto;
       margin-right: auto;
-      width: 600px;
+      max-width: 600px;
+      width: 100%;
       text-align: center;
       color: white;
       /* Whatever width you want */
     }
-    
-        /* GO BACK BUTTON */
-    
+
+    /* GO BACK BUTTON */
+
     input[type=button] {
       margin: 20px 0px 0px 20px;
       padding: 0;
       position: fixed;
-      height: 80px;
-      width: 80px;
+      height: 100px;
+      width: 100px;
       border-radius: 100px;
       background: #B16791;
       border: 1px solid #B16791;
@@ -100,28 +106,95 @@
       background-size: 100%;
       z-index: 99;
     }
-    
+
     input[type=button]:hover {
       cursor: pointer;
+    }
+
+    /* SOMGS */
+
+    #somgs {
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 600px;
+    }
+
+    #somgs2 {
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      position: fixed;
+      display: none;
+      bottom: 40px;
+      left: 40px;
+      right: 40px;
+      font-size: 36px;
+    }
+
+    audio {
+      border-radius: 100px;
+      right: 0;
+      width: 100%;
+    }
+
+    /* OTHER */
+
+    #top_text {
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding-top: 20px;
     }
 
     @media only screen and (max-width: 1000px) {
       .subtitle {
         font-size: 42px;
       }
+
       input[type=button] {
-        height: 120px;
-        width: 120px;
+        height: 140px;
+        width: 140px;
         cursor: pointer;
+      }
+
+      #somgs {
+        display: none;
+      }
+
+      audio {
+        border-radius: 100px;
+        width: 100%;
+      }
+
+      #somgs {
+        display: none;
+      }
+
+      #somgs2 {
+        display: initial;
+        left: 0;
+        right: 0;
+        padding: 0px 40px 0px 40px;
+      }
+
+      #top_text {
+        padding-top: 40px;
+        font-size: 36px;
+      }
+
     }
-    }
+
   </style>
-  
-    <script type="text/javascript">
-    document.getElementById("button").onclick = function () {
-        location.href = "https://terramsc.github.io/vault/index.html";
+
+  <script type="text/javascript">
+    document.getElementById("button").onclick = function() {
+      location.href = "https://terramsc.github.io/vault/index.html";
     };
-    </script>
+
+  </script>
 
   <body>
 
@@ -133,6 +206,24 @@
           <img src="https://i.imgur.com/nc24BBo.gif" width="100%">
         </div>
       </div>
+    </div>
+
+    <div id="somgs">
+      <p>"I couldn't say goodbye"</p>
+      <p>v0.1 - 17.04.2022</p>
+      <audio controls>
+        <source src="https://drive.google.com/uc?export=download&id=11Ha_wWo9swSODWuftrHDu-ccbyZ58-HP" type="audio/mpeg" /></audio>
+    </div>
+
+    <div id="somgs2">
+      <p>"I couldn't say goodbye"</p>
+      <p>v0.1 - 17.04.2022</p>
+      <audio controls>
+        <source src="https://drive.google.com/uc?export=download&id=11Ha_wWo9swSODWuftrHDu-ccbyZ58-HP" type="audio/mpeg" /></audio>
+    </div>
+
+    <div id="top_text">
+      sleep tight
     </div>
 
   </body>
