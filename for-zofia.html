@@ -201,6 +201,10 @@
     _::-webkit-full-page-media, _:future, :root .safari_only {
         padding-bottom: 65px; //resize 
     }
+        _::-webkit-full-page-media, _:future, :root audio {
+        height:0;
+        width:0;
+    }
 }
 
   </style>
@@ -228,17 +232,15 @@
     <div id="somgs">
       <p>"I couldn't say goodbye"</p>
       <p>v0.1 - 17.04.2022</p>
-      <audio controls>
-        <source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
+      <audio controls><source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
     </div>
 
     <div id="somgs2">
       
       <p>v0.1 - 17.04.2022</p>
-      <div id="audiodiv">
-        <audio controls><source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
-      </div>
       <p>"I couldn't say goodbye"</p>
+            <div id="audiodiv"><audio controls><source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
+      </div>
     </div>
 
     <div id="top_text">
