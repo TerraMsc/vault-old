@@ -60,6 +60,10 @@
     body {
       padding-bottom: env(safe-area-inset-bottom);
     }
+    
+    .safari_only {
+      height: 100%;
+    }
 
     /* MAIN CENTERED DIV WITH A PIC */
 
@@ -192,6 +196,12 @@
       }
 
     }
+    
+    @media screen and (max-width: 767px) {
+    _::-webkit-full-page-media, _:future, :root .safari_only {
+        padding-bottom: 65px; //resize 
+    }
+}
 
   </style>
 
@@ -203,6 +213,7 @@
   </script>
 
   <body>
+    <div class="safari_only">
 
     <div id="button"><input type="button" value="" onclick="location.href = 'https://terramsc.github.io/vault/';"></div>
 
@@ -217,20 +228,24 @@
     <div id="somgs">
       <p>"I couldn't say goodbye"</p>
       <p>v0.1 - 17.04.2022</p>
-
+      <audio controls>
+        <source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
     </div>
 
     <div id="somgs2">
       <p>"I couldn't say goodbye"</p>
       <p>v0.1 - 17.04.2022</p>
       <div id="audiodiv">
-
+        <audio controls>
+          <source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
       </div>
     </div>
 
     <div id="top_text">
       sleep tight
     </div>
+    
+</div>
 
   </body>
 
