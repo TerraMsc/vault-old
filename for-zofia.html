@@ -2,7 +2,8 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, '/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+/>
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,7 +136,6 @@
       bottom: 40px;
       left: 40px;
       right: 40px;
-      font-size: 36px;
     }
 
     audio {
@@ -192,11 +192,15 @@
       }
 
       #top_text {
-        padding-top: 72px;
-        font-size: 36px;
+        padding-top: @72px;
+        font-size: @36px;
       }
 
     }
+    
+        /* SAFARI */
+        
+/* 
     
     @media screen and (max-width: 767px) {
     _::-webkit-full-page-media, _:future, :root .safari_only {
@@ -218,6 +222,8 @@ audio {
         width:100%;
     }
 }
+
+*/
 
   </style>
 
