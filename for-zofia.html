@@ -136,8 +136,11 @@
 
     audio {
       border-radius: 100px;
-      right: 0;
       width: 100%;
+    }
+    
+    #audiodiv {
+      min-height: 40px;
     }
 
     /* OTHER */
@@ -150,6 +153,8 @@
       padding-top: 20px; 
       position: fixed;
     }
+    
+    /* MOBILE */
 
     @media only screen and (max-width: 1000px) {
       .subtitle {
@@ -220,8 +225,10 @@
     <div id="somgs2">
       <p>"I couldn't say goodbye"</p>
       <p>v0.1 - 17.04.2022</p>
-      <audio controls>
-        <source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
+      <div id="audiodiv">
+        <audio controls>
+          <source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
+      </div>
     </div>
 
     <div id="top_text">
