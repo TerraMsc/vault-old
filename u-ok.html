@@ -117,7 +117,7 @@
     /* AUDIO PLAYER CUSTOM COLORS */
     
     audio {
-      filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+      filter: grayscale(1);
     }
 
     /* OTHER */
@@ -193,6 +193,9 @@
     @supports (-webkit-touch-callout: none) {
       #somgs2 {
         bottom: 30px;
+      }
+      audio {
+        filter: grayscale(initial);
       }
     }
 
