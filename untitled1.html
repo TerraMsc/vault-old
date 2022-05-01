@@ -115,7 +115,7 @@
     /* AUDIO PLAYER CUSTOM COLORS */
     
     audio {
-      filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+      filter: grayscale(1);
     }
     
     /* GO BACK BUTTON */
@@ -154,6 +154,12 @@ box-shadow: 0px 10px 44px -7px rgba(204, 204, 204, 1);
         width: 120px;
         cursor: pointer;
     }
+    }
+	  
+@supports (-webkit-touch-callout: none) {
+      audio {
+        filter: grayscale(initial);
+      }
     }
 </style>
   
