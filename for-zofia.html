@@ -2,8 +2,7 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
-/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +13,7 @@
   </head>
 
   <style>
+  
     /* GET RID OFF TUMBLR BS */
 
     #tumblr_controls,
@@ -61,10 +61,6 @@
 
     body {
       padding-bottom: env(safe-area-inset-bottom);
-    }
-    
-    .safari_only {
-      height: 100%;
     }
 
     /* MAIN CENTERED DIV WITH A PIC */
@@ -139,12 +135,14 @@
       font-size: 12px;
       text-align: center;
     }
+    
+    /* AUDIO PLAYER */
 
     audio {
       border-radius: 100px;
       width: 100%;
     }
-    
+
     #audiodiv {
       min-height: 40px;
     }
@@ -156,10 +154,10 @@
       color: white;
       width: 100%;
       text-align: center;
-      padding-top: 50px; 
+      padding-top: 50px;
       position: fixed;
     }
-    
+
     /* MOBILE */
 
     @media only screen and (max-width: 1000px) {
@@ -200,12 +198,12 @@
       }
 
     }
-    
+
     @supports (-webkit-touch-callout: none) {
       #somgs2 {
-              bottom: 30px;
+        bottom: 30px;
       }
-}
+    }
 
   </style>
 
@@ -217,7 +215,6 @@
   </script>
 
   <body>
-    <div class="safari_only">
 
     <div id="button"><input type="button" value="" onclick="location.href = 'https://terramsc.github.io/vault/';"></div>
 
@@ -232,22 +229,22 @@
     <div id="somgs">
       <p>"I couldn't say goodbye"</p>
       <p>v0.1 - 17.04.2022</p>
-      <audio controls><source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
+      <audio controls="controls">
+        <source src="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu"></audio>
     </div>
 
     <div id="somgs2">
-      
       <p>v0.1 - 17.04.2022</p>
       <p>"I couldn't say goodbye"</p>
-            <div id="audiodiv"><audio controls><source src="https://drive.google.com/file/d/1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu" type="audio/mpeg" /></audio>
+      <div id="audiodiv">
+        <audio controls="controls">
+          <source src="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu"></audio>
       </div>
     </div>
 
     <div id="top_text">
       sleep tight
     </div>
-    
-</div>
 
   </body>
 
