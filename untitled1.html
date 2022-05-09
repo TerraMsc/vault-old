@@ -10,41 +10,6 @@
   </head>
 
   <style>
-  
-    /* GET RID OFF TUMBLR BS */
-
-    #tumblr_controls,
-    .controls {
-      display: none !important;
-    }
-
-    #tumblr_controls {
-      display: none;
-    }
-
-    iframe:first-child {
-      display: none !important;
-    }
-
-    iframe:nth-child(2) {
-      display: none;
-    }
-
-    .app-cta-button {
-      opacity: 0 !important;
-    }
-
-    .tmblr-iframe--app-cta-button {
-      display: none !important;
-    }
-
-    .tmblr-iframe-compact .tmblr-iframe--unified-controls {
-      display: none;
-    }
-
-    #search {
-      display: none;
-    }
     
     /* HTML & BODY */
     
@@ -52,18 +17,7 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #000;
-    }
-
-    h1,
-    h2 {
-      height: 100%;
-      color: black;
-    }
-    
-    h3 {
-        font-size: 22px;
-        color: black;
+      background-color: #9ab9d1;
     }
 
     /* CENTERED DIV FOR CONTENT */
@@ -85,9 +39,22 @@
     .inner {
       margin-left: auto;
       margin-right: auto;
-      width: 600px;
+      width: 700px;
       text-align: center;
+      position: relative;
+      -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
       /* Whatever width you want */
+      height: 830px;
+    }
+
+    .inner img {
+        width: 700px;
+        height: 830px;
     }
 
     #search {
@@ -98,26 +65,29 @@
       text-decoration: none;
     }
     
-    audio {
-        width: 100%;
+    .audioplayer {
         border-radius: 100px;
+        position: absolute;
+        bottom: 200px;
+        height: 60px;
+        width: 360px;
+        left: 0; 
+        right: 13px; 
+        margin-left: auto; 
+        margin-right: auto; 
     }
-    
-    .subtitle {
-      position: fixed; transform: translate(-50%, 0); left: 50%; font-size: 25px; font-weight: 700; top: 45px; font-weight:700; width: 100%; text-align: center;
+
+    audio {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 360px;
+        transform: translate(-50%, -50%);
     }
-    
-    .subtitle {
-      width: 100%;
-      text-align: center;
-      font-weight: 700;
-      color: #fff;
-    }
-	  
 	      
     /* AUDIO PLAYER CUSTOM COLORS */
     
-    audio {
+    .audioplayer {
       filter: grayscale(1);
     }
     
@@ -134,12 +104,11 @@
       border: 1px solid white;
       font-weight: 1000;
       font-size: 48px;
-      background-image: url("https://i.imgur.com/yvbHQUf.jpg");
+      background-image: url("https://i.imgur.com/6ozIbzu.png");
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: 100%;
       z-index: 99;
-      filter: invert();
     }
     
     input[type=button]:hover {
@@ -147,41 +116,27 @@
     }
 
     @media only screen and (max-width: 1000px) {
-      .subtitle {
-        text-align: right;
-        padding-right: 90px;
-      }
-      }
-        input[type=button] {
-      }
+
     }
 	  
-@supports (-webkit-touch-callout: none) {
-      audio {
-        filter: grayscale(initial);
-      }
+    @supports (-webkit-touch-callout: none) {
+        audio {
+            filter: grayscale(initial);
+        }
     }
+
 </style>
-  
-  <script type="text/javascript">
-    document.getElementById("button").onclick = function () {
-        location.href = "https://terramsc.github.io/vault/";
-    };
-  </script>
 
   <body>
 
-    <div id="button"><input type="button" value="" onclick="location.href = 'https://terramsc.github.io/vault/';"></div>
+    <div id="button"><input type="button" value="" onclick="location.href = 'https://terramsc.github.io/vault/'"></div>
 
     <div class="outer">
       <div class="middle">
         <div class="inner">
-          	<audio controls>
-  <source src="https://drive.google.com/uc?export=download&id=11Ha_wWo9swSODWuftrHDu-ccbyZ58-HP" type="audio/mpeg"/>
-</audio>
-	
+            <img src="https://i.imgur.com/K8FMqsL.png">
+            <div class="audioplayer"><audio controls><source src="https://drive.google.com/uc?export=download&id=11Ha_wWo9swSODWuftrHDu-ccbyZ58-HP" type="audio/mpeg"/></audio></div>
         </div>
-        <div class="subtitle">untitled (with NoStereo)</div>
       </div>
     </div>
 
