@@ -2,7 +2,8 @@
 
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Terra</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -64,6 +65,8 @@
     body {
       margin: 0;
       background-color: black;
+      width: 100%;
+      height: 100%;
     }
 
     h1,
@@ -103,6 +106,10 @@
       color: white;
       /* Whatever width you want */
     }
+
+    .inner img {
+        max-width: 100%;
+    }
     
     /* LINKS DECORATION */
 
@@ -124,11 +131,22 @@
      
     /* MOBILE */
     
-    @media only screen and (max-width: 1000px) {
-      h1 {
-        font-size: 45px;
-        line-height: 60px;
-      }
+    @media only screen and (max-width: 760px) {
+        h1 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .logotype {
+            min-height: initial;
+            padding-bottom: 30px;
+        }
+        .inner {
+            width: 90%;
+        }
+        .logotype {
+            padding-bottom: 20px;
+        }
     }
 
   </style>
