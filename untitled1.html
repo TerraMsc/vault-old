@@ -1,283 +1,104 @@
-<html>
-
+<html lang="en">
+	
   <head>
-    <meta charset="utf-8">
-    <title>untitled1</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	  <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TERRA.NOSTEREO</title>
   </head>
-
+	
   <style>
-    
-    /* HTML & BODY */
-    
-    html,
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #9ab9d1;
-    }
-	body { 
-	margin: 0; height: 100%; overflow: hidden;
-	  }
+  html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #9ab9d1;
+}
 
-    /* CENTERED DIV FOR CONTENT */
+#container {
+  font-size: 0;
+  display: flex;
+  flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px 0px 20px;
+  max-width: 800px;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  transition: ease all 0.5;
+}
 
-    .outer {
-      display: table;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
 
-    .middle {
-      display: table-cell;
-      vertical-align: middle;
-      
-    }
+#two {
+  margin: -1px 0 -1px 0;
+  position: relative;
+}
 
-    .inner {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 700px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-      -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-         -khtml-user-select: none; /* Konqueror HTML */
-           -moz-user-select: none; /* Old versions of Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* Non-prefixed version, currently
-      /* Whatever width you want */
-      height: 830px;
-      
-    }
+#audio-player {
+  position: absolute;
+  margin: auto;
+  top: 0; 
+  left: -10px; 
+  bottom: 0; 
+  right: 0;
+  max-width: 50%;
+  height: 30px;
+}
 
-    .inner img {
-      max-width:100%;
-      max-height:100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+audio {
+  width: 100%;
+  height: 30px;
+}
 
-    #search {
-      display: none;
-    }
-    
-    a {
-      text-decoration: none;
-    }
-    
-    .audioplayer {
-        border-radius: 100px;
-        position: absolute;
-        bottom: 200px;
-        height: 60px;
-        width: 360px;
-        left: 0; 
-        right: 13px; 
-        margin-left: auto; 
-        margin-right: auto; 
-    }
+@media only screen and (max-height: 1000px) {
+  #container {
+    transition: ease all 0.5s;
+    max-width: 725px;
+  }
+}
 
-    .audioplayer audio {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 360px;
-        transform: translate(-50%, -50%);
-    }
-	      
-    /* AUDIO PLAYER CUSTOM COLORS */
-    
-    .audioplayer {
-      filter: grayscale(1);
-    }
-    
-    /* GO BACK BUTTON */
-    
-    input[type=button] {
-      margin: 20px 0px 0px 20px;
-      padding: 0;
-      position: fixed;
-      height: 80px;
-      width: 80px;
-      border-radius: 100px;
-      background: white;
-      border: 1px solid white;
-      font-weight: 1000;
-      font-size: 48px;
-      background-image: url("https://i.imgur.com/6ozIbzu.png");
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: 100%;
-      z-index: 99;
-    }
-    
-    input[type=button]:hover {
-      cursor: pointer;
-    }
+@media only screen and (max-height: 925px) {
+  #container {
+    max-width: 650px;
+  }
+}
 
-    #container {
-      opacity: 0;
-    }
-	  
-	img {
-	max-width: 700px;	
-	  }
+@media only screen and (max-height: 825px) {
+  #container {
+    max-width: 600px;
+  }
+}
 
-    @media only screen and (max-width: 775px) {
+@media only screen and (max-height: 750px) {
+  #container {
+    max-width: 550px;
+  }
+}
 
-    .img-container img {
-    }
-
-    .container {
-    }
-
-    .audioplayer {
-    }
-
-    audio {
-    }
-    
-    .outer {
-      display: none;
-    }
-
-    .middle {
-    }
-
-    .inner {
-    }
-
-    #container {
-      opacity: 1;
-      width: 90%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-      margin-right: auto;
-      background-image: rl('https://i.imgur.com/K8FMqsL.png');
-    }
-
-    #img-wrap {
-      display: inline-block;
-      opacity: 1;
-      position: relative;
-    }
-    
-    .audioplayer2 {
-      margin-left: auto;
-      margin-right: auto;
-      width: 300px;
-    }
-
-    .img-part2 audio {
-      width: 350px;
-    }
-
-    #container img {
-      max-width: 100%;
-      position: relative;
-    }
-
-    html, body {
-      width: 100%;
-      height: 100%;
-    }
-
-    .img-part2 {
-      margin: -1px 0px -1px 0px;
-      top: 0;
-    }
-
-    .audioplayer2 {
-    }
-
-    .playerimg {
-      position: relative;
-    }
-
-    .img-part2 audio {
-      position: absolute;
-      z-index: 10;
-      top:0;
-      left:-13px;
-      right:0;
-      margin-left: auto;
-      margin-right: auto;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 75%;
-      width: 50%;
-    }
-
-    .img-part2 img {
-      position: relative;
-      opacity: 1;
-    }
-
-    .img-part1 {
-      margin: 0px 0px 0px 0px;
-    }
-
-    .img-part3 {
-      margin: 0px 0px 0px 0px;
-    }
-
-    }
-	  
-    @supports (-webkit-touch-callout: none) {
-        audio {
-            filter: grayscale(initial);
-        }
-    }
-
-</style>
-
+@media only screen and (max-height: 700px) {
+  #container {
+    max-width: 400px;
+  }
+}
+  </style>
+	
   <body>
-
-    <div id="button"><input type="button" value="" onclick="location.href = 'https://terramsc.github.io/vault/'"></div>
-
-    <div class="outer">
-      <div class="middle">
-        <div class="inner">
-            <img src="https://i.imgur.com/GFen9Oy.png">
-            <div class="audioplayer"><audio controls><source src="https://docs.google.com/uc?export=download&id=11Ha_wWo9swSODWuftrHDu-ccbyZ58-HP" type="audio/mpeg"/></audio></div>
+    <div id="container">
+      <div id="one">
+        <img src="https://i.imgur.com/Z6CVXRr.png">
+      </div>
+      <div id="two"><img src="https://i.imgur.com/jwS8d0c.png">
+        <div id="audio-player">
+          <audio controls><source src="https://docs.google.com/uc?export=download&id=11Ha_wWo9swSODWuftrHDu-ccbyZ58-HP" type="audio/mpeg"/></audio>
         </div>
       </div>
+      <div id="three"><img src="https://i.imgur.com/93F1RFH.png"></div>
     </div>
-
-    <div id="container">
-      <div id="img-wrap">
-
-    
-      <div class="img-part"><img src="https://i.imgur.com/Z6CVXRr.png"></div>
-      
-
-      <div class="img-part2">
-        <div class="playerimg"><img src="https://i.imgur.com/jwS8d0c.png">
-
-        <audio controls><source src="https://docs.google.com/uc?export=download&id=11Ha_wWo9swSODWuftrHDu-ccbyZ58-HP" type="audio/mpeg"/></audio>
-
-      </div>
-        
-      </div>
-
-      <div class="img-part3"><img src="https://i.imgur.com/93F1RFH.png"></div>
-
-      </div>
-    </div>
-
   </body>
-
+	
 </html>
