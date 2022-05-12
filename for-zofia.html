@@ -38,9 +38,12 @@
         background-color: #B16791;
     }
 
-    .body-wrap {
-        visibility: hidden;
-    }
+    .preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
 
     /* MAIN CENTERED DIV WITH A PIC */
 
@@ -633,7 +636,7 @@
 
   </style>
 
-  <body onload="window.top.scrollTo(0,1);">
+  <body class="preload">
 
     <div class="body-wrap">
 
@@ -708,12 +711,11 @@
     });
   </script>
 
-  <script>
-      $(window).load(function() {
-
-$(selector).removeClass('body-wrap');
+<script>
+  $(window).load(function() {
+  $("body").removeClass("preload");
 });
-  </script>
+</script>
 
   </body> 
 
