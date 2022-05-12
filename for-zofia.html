@@ -351,16 +351,372 @@
     }); 
   </script>
 
-  <script>
-    $('a').click(function(e) {
-    e.preventDefault();
-    newLocation = this.href;
-    $('body').fadeOut('slow', newpage);
-    });
-    function newpage() {
-    window.location = newLocation;
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <title>For Zofia</title>
+    <meta name="apple-mobile-web-app-title" content="I couldn't say goodbye." />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
+    
+  </head>
+
+  <style>
+    
+    /* HTML & BODY */
+    
+    html, body {margin: 0; height: 100%; overflow: hidden}
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
     }
+
+    html {
+        background-color: black;
+    }
+
+    body {
+        background-color: #B16791;
+    }
+
+    body {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* MAIN CENTERED DIV WITH A PIC */
+
+    .outer {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .middle {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      /* Whatever width you want */
+    }
+
+    /* GO BACK BUTTON */
+
+    input[type=button] {
+      margin: 20px 0px 0px 20px;
+      padding: 0;
+      position: fixed;
+      height: 80px;
+      width: 80px;
+      border-radius: 100px;
+      background: #B16791;
+      border: 1px solid #B16791;
+      font-weight: 1000;
+      font-size: 48px;
+      background-image: url("https://i.imgur.com/mojAVpi.gif");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 100%;
+      z-index: 99;
+    }
+
+    input[type=button]:hover {
+      cursor: pointer;
+    }
+
+    /* SOMGS */
+
+    #somgs {
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      position: fixed;
+      bottom: 35px;
+      width: 600px;
+      max-width: calc(100% - 80px);
+      text-align: center;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    #somgs2 {
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      position: fixed;
+      display: none;
+      bottom: 35px;
+      left: 40px;
+      right: 40px;
+      width: 600px;
+      max-width: calc(100% - 80px);
+      align-items: center;
+      text-align: center;
+    }
+    
+    /* AUDIO PLAYER */
+
+    audio {
+      border-radius: 100px;
+      width: 100%;
+    }
+
+    #audiodiv {
+      min-height: 40px;
+    }
+
+    /* VERSION HISTORY POPUP */
+
+    .tooltip-wrap {
+      width: 600px;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 2px solid white;
+      color: white;
+      padding-top: 20px;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 350px;
+      height: 285px;
+      color: #B16791;
+      text-align: center;
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -175px;
+      background-image: url("https://i.imgur.com/1KSERI4.png");
+      background-size: 350px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      overflow: scroll;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .tooltiptext {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .popup-text {
+      position: absolute;
+      top: 0;
+      max-height: 250px;
+      overflow: scroll;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .popup-text a {
+      color:#B16791;
+      text-decoration: none;
+    }
+
+    .tooltiptext::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tooltip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .popup-text::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .popup-img {
+      width: 600px;
+    }
+
+    /* OTHER */
+
+    #top_text {
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding-top: 50px;
+      position: fixed;
+      font-size: 16px;
+    }
+
+    /* MOBILE */
+
+    @media only screen and (max-width: 1000px) {
+
+      input[type=button] {
+        cursor: pointer;
+      }
+
+      .tooltip-wrap {
+      width: 100%;
+      }
+
+      #somgs {
+        display: none;
+      }
+
+      audio {
+        border-radius: 100px;
+        width: 100%;
+      }
+
+      #somgs {
+        display: none;
+      }
+
+      #somgs2 {
+        display: initial;
+        left: 0;
+        right: 0;
+        padding: 0px 40px 0px 40px;
+        font-size: 12px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .tooltip {
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .popup-text {
+        font-size: 16px;
+      }
+
+      #top_text {
+        text-align: right;
+        right: 40px;
+        font-size: 16px;
+      }
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      #somgs2 {
+        bottom: 30px;
+      }
+    }
+
+  </style>
+  
+  <div id=page></div>
+
+  <script type="text/javascript">
+    document.getElementById("button").onclick = function() {
+      location.href = "https://terramsc.github.io/vault/index.html";
+    };
+
   </script>
+
+  <body onload="window.top.scrollTo(0,1);">
+
+    <div id="button" data-link="https://terramsc.github.io/vault/"><input type="button"></div>
+
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+          <img src="https://i.imgur.com/nc24BBo.gif" width="100%">
+        </div>
+      </div>
+    </div>
+
+    <div id="somgs">
+
+      <div class="tooltip-wrap">
+        <div class="tooltip" onclick="">Version history
+          <span class="tooltiptext">
+            <div class="popup-text">
+              <p><a href="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu">v0.1 - 17.04.2022</p></a>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <p>"I couldn't say goodbye"</p>
+      <audio controls="controls">
+        <source src="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu"></audio>
+    </div>
+
+    <div id="somgs2">
+
+      <div class="tooltip-wrap">
+        <div class="tooltip" onclick="">Version history
+          <span class="tooltiptext">
+            <div class="popup-text">
+              <p><a href="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu">v0.1 - 17.04.2022</p></a>
+            </div>
+          </span>
+        </div>
+      </div>
+      
+      <p>"I couldn't say goodbye"</p>
+      <div id="audiodiv">
+        <audio controls="controls">
+          <source src="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu"></audio>
+      </div>
+    </div>
+
+    <div id="top_text">
+      sleep tight
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+    /*! Fades in whole page on load */
+    $('body').css('display', 'none');
+    $('body').fadeIn(500);
+    }); 
+  </script>
+
+  <script>
+    $('.button').click(function() {
+        var destination = $(this).data("link");
+     $("body").fadeOut(500,function(){
+           window.location.replace(destination);
+        });
+    });
+  </script>
+
+  </body> 
+
+</html>
+
 
   </body> 
 
