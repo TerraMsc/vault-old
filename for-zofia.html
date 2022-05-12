@@ -282,7 +282,7 @@
   
   <div id=page></div>
 
-   <div id="button" data-link="https://terramsc.github.io/vault/"><input type="button" data-link="https://terramsc.github.io/vault/"></div>
+   <input type="button" class="button" data-link="https://terramsc.github.io/vault/"></div>
 
     <div class="outer">
       <div class="middle">
@@ -689,7 +689,7 @@
   </script>
 
   <script>
-    $('#button').click(function() {
+    $('.button').click(function() {
         var destination = $(this).data("link");
      $("body").fadeOut(500,function(){
            window.location.replace(destination);
