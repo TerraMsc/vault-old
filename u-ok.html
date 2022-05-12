@@ -236,6 +236,25 @@
 
         <div id="lnd">
     </div>
+    
+      <script>
+    $(document).ready(function(){
+    /*! Fades in whole page on load */
+    $('body').css('display', 'none');
+    $('body').fadeIn(500);
+    }); 
+  </script>
+
+  <script>
+    $('a').click(function(e) {
+    e.preventDefault();
+    newLocation = this.href;
+    $('body').fadeOut('slow', newpage);
+    });
+    function newpage() {
+    window.location = newLocation;
+    }
+  </script>
 
   </body>
 
