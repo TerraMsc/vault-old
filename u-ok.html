@@ -210,7 +210,7 @@
 
   <body>
 
-    <div id="button" data-link="https://terramsc.github.io/vault/"><input type="button" value="" onclick="location.href = 'https://terramsc.github.io/vault/';"></div>
+    <div class="button" data-link="https://terramsc.github.io/vault/"><input type="button" id="close" value=""></div>
 
 
 
@@ -244,15 +244,14 @@
     }); 
   </script>
 
-  <script>
+<script>
 $('.button').click(function() {
     var destination = $(this).data("link");
  $("body").fadeOut(500,function(){
        window.location.replace(destination);
     });
 });
-  </script>
-
+</script>
   </body>
 
 </html>
