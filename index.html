@@ -6,171 +6,352 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
   </head>
 
-  <style>
-    
-    html, body {margin: 0; height: 100%; overflow: hidden}
-  
-    /* GET RID OFF TUMBLR BS */
-    
-    #tumblr_controls,
-    .controls {
-      display: none !important;
-    }
+<style>
 
-    #tumblr_controls {
-      display: none;
-    }
+  /* HTML & BODY */
 
-    iframe:first-child {
-      display: none !important;
-    }
+  html,
+  body {
+    margin: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Inter";
+  }
 
-    iframe:nth-child(2) {
-      display: none;
-    }
+  h1 {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0;
+    font-weight: 700;
+  }
 
-    .app-cta-button {
-      opacity: 0 !important;
-    }
+  h2 {
+    margin-top: -5px;
+    margin-bottom: -8px;
+  }
 
-    .tmblr-iframe--app-cta-button {
-      display: none !important;
-    }
+  h3 {
+    font-weight: 400;
+    font-size: 12px;
+  }
 
-    .tmblr-iframe-compact .tmblr-iframe--unified-controls {
-      display: none;
-    }
-    
-    #search {
-      display: none;
-    }
-    
-    /* FONTS */
-    
-    @font-face {
-      font-family: HelveticaNeue;
-      src: url("./vault/HelveticaNeue-Bold.otf") format('opentype');
-      font-weight: bold;
-      font-style: normal;
-      
-    }
-    
-    /* HTML & BODY */
+  p {
+    font-size: 16px;
+  }
 
-    html,
-    body {
-      margin: 0;
-      background-color: black;
-      width: 100%;
-      height: 100%;
-    }
+  /* CENTERED DIV FOR CONTENT */
 
-    h1,
-    h2 {
-      font-family: "Inter";
-      font-weight: 700;
-    }
+  .outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
 
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    text-align: center;
+    color: white;
+    /* Whatever width you want */
+  }
+
+  .inner img {
+    max-width: 100%;
+  }
+
+  /* NAVIGATION */
+
+  #navigation {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .logotype-small {
+    width: 150px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 40px;
+  }
+
+  .logotype-small img {
+    display: block;
+    max-width: 150px;
+  }
+
+  .pops {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    z-index: 999;
+  }
+
+  .cls-pop {
+    background-image: url(https://i.imgur.com/IwTAgVD.png);
+    background-color: rgb(0, 0, 0, 0);
+    border: 0;
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    bottom: 40px;
+  }
+
+  .cls-pop:hover {
+    cursor: pointer;
+  }
+
+  .navigation-button-info {
+    background-image: url(https://i.imgur.com/rCp1tsg.png);
+    background-color: rgb(0, 0, 0, 0);
+    border: 0;
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    position: initial;
+  }
+
+  .navigation-button-info:hover {
+    cursor: pointer;
+  }
+
+  .navigation-button-info a {
+    z-index: 99;
+  }
+
+  .navigation-button-info a:hover {
+    cursor: pointer;
+  }
+
+  /* CONTENT */
+
+  .content {
+    color: white;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content-wrap {
+    position: absolute;
+    top: 136px;
+    bottom: 120px;
+    left: 40px;
+    right: 40px;
+    overflow-y: auto;
+  }
+
+  /* LINKS DECORATION */
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* OTHER */
+
+  .logotype {
+    min-height: 262px;
+    padding-bottom: 30px;
+  }
+
+  /* MOBILE */
+
+  @media only screen and (max-width: 760px) {
     h1 {
-      font-size: 30px;
-      line-height: 40px;
-      margin: 0;
-    }
-    
-    /* CENTERED DIV FOR CONTENT */
-
-    .outer {
-      display: table;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      max-width: 100%;
+      font-size: 5vw;
+      line-height: 1.5em;
     }
 
-    .middle {
-      display: table-cell;
-      vertical-align: middle;
+    .logotype {
+      min-height: initial;
+      padding-bottom: 40px;
     }
 
     .inner {
-      margin-left: auto;
-      margin-right: auto;
-      width: 700px;
-      text-align: center;
-      color: white;
-      /* Whatever width you want */
+      width: 90%;
     }
-
-    .inner img {
-        max-width: 100%;
-    }
-    
-    /* LINKS DECORATION */
-
-    a {
-      text-decoration: none;
-      color: white;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-    
-    /* OTHER */
 
     .logotype {
-      min-height: 262px;
-      padding-bottom: 30px;
+      padding-bottom: 20px;
     }
-     
-    /* MOBILE */
-    
-    @media only screen and (max-width: 760px) {
-        h1 {
-            font-size: 20px;
-            line-height: 30px;
-        }
+  }
 
-        .logotype {
-            min-height: initial;
-            padding-bottom: 30px;
-        }
-        .inner {
-            width: 90%;
-        }
-        .logotype {
-            padding-bottom: 20px;
-        }
-    }
+</style>
 
-  </style>
+<body>
 
-  <body>
+  <!-- LOGOTYPE -->
 
-    <div class="outer">
-      <div class="middle">
-        <div class="inner">
+  <div class="pops">
 
-          <!-- LOGOTYPE -->
+    <div class="logotype-small"><img src="https://i.imgur.com/vhVfgRN.png"></div>
 
-          <div class="logotype"><img src="https://i.imgur.com/vhVfgRN.png" width="100%"></div>
+    <div class="content">
+      <div class="content-wrap">
 
-          <!-- LINKS -->
-
-          <h1><a href="https://terramsc.github.io/vault/u-ok.html">18.11.2021 You forgot / It's ok</a></h1>
-          <h1><a href="https://terramsc.github.io/vault/untitled1.html">(in works) untitled</a></h1>
-          <h1><a href="https://terramsc.github.io/vault/for-zofia.html">(in works) For Zofia</a></h1>
-
+        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
         </div>
+        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>        <div class="post">
+          <h3>12.05.2022</h3>
+          <h2>Website has been completed.</h2>
+          <p>No content.</p>
+        </div>
+
       </div>
     </div>
 
-  </body>
+    <button class="cls-pop"></button>
+
+  </div>
+
+  <div id="navigation"> 
+    <button class="navigation-button-info"></button>
+  </div>
+
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+
+        <!-- LOGOTYPE -->
+
+        <div class="logotype"><img src="https://i.imgur.com/vhVfgRN.png" width="100%"></div>
+
+        <!-- LINKS -->
+
+        <h1><a href="https://terramsc.github.io/vault/u-ok.html">18.11.2021 You forgot / It's ok</a></h1>
+        <h1><a href="https://terramsc.github.io/vault/untitled1.html">(in works) untitled</a></h1>
+        <h1><a href="https://terramsc.github.io/vault/for-zofia.html">(in works) For Zofia</a></h1>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+  $('.navigation-button-info').click(function(){
+    $('.pops').fadeIn();
+  });
+  $('.cls-pop').click(function(){
+    $('.pops').fadeOut();
+  });
+  });
+  </script>
+
+  <script>
+    $(document).ready(function(){
+    /*! Fades in whole page on load */
+    $('body').css('display', 'none');
+    $('body').fadeIn(500);
+    }); 
+  </script>
+
+  <script>
+    $('a').click(function(e) {
+    e.preventDefault();
+    newLocation = this.href;
+    $('body').fadeOut('slow', newpage);
+    });
+    function newpage() {
+    window.location = newLocation;
+    }
+  </script>
+
+</body>
 
 </html>
