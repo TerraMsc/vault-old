@@ -1,6 +1,7 @@
 <html>
 
   <head>
+
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <title>For Zofia</title>
@@ -28,6 +29,10 @@
     
     /* HTML & BODY */
     
+    body:not(.loaded){
+  display:none;
+}
+    
     html, body {margin: 0; height: 100%; overflow: hidden}
 
     html,
@@ -44,13 +49,6 @@
     body {
         background-color: #B16791;
     }
-
-    .preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-}
 
     /* MAIN CENTERED DIV WITH A PIC */
 
@@ -290,7 +288,7 @@
 
   </style>
 
-  <body class="preload">
+<body onload="document.body.classList.add('loaded')">
 
     <div id="button"><input type="button" value="" onclick="location.href = 'https://terramsc.github.io/vault/';"></div>
 
@@ -634,13 +632,14 @@
 
   </style>
   
-  <script>
-  $(window).load(function() {
-  $("body").removeClass("preload");
-});
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("body").css("display", "none");
+        $("body").fadeIn(2000);
+    });
 </script>
 
-  <body class="preload">
+  <body>
 
     <div class="body-wrap">
 
@@ -725,9 +724,5 @@
 
   </body> 
 
-</html>
-
-
-  </body> 
 
 </html>
