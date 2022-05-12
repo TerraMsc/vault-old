@@ -38,8 +38,8 @@
         background-color: #B16791;
     }
 
-    body {
-      padding-bottom: env(safe-area-inset-bottom);
+    .body-wrap {
+        visibility: hidden;
     }
 
     /* MAIN CENTERED DIV WITH A PIC */
@@ -632,10 +632,10 @@
     }
 
   </style>
-  
-  <div id=page></div>
 
   <body onload="window.top.scrollTo(0,1);">
+
+    <div class="body-wrap">
 
     <div class="button" data-link="https://terramsc.github.io/vault/"><input type="button"></div>
 
@@ -687,9 +687,11 @@
       sleep tight
     </div>
 
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-  <script>
+<script>
     $(document).ready(function(){
     /*! Fades in whole page on load */
     $('body').css('display', 'none');
@@ -704,6 +706,13 @@
            window.location.replace(destination);
         });
     });
+  </script>
+
+  <script>
+      $(window).load(function() {
+
+$(selector).removeClass('body-wrap');
+});
   </script>
 
   </body> 
