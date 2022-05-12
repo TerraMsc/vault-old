@@ -135,7 +135,7 @@ audio {
   </style>
 
 <div id="navigation"> 
-    <button class="navigation-button" onclick="location.href='https://terramsc.github.io/vault/';"></button>
+    <button class="navigation-button" data-link="https://terramsc.github.io/vault/"></button>
 </div>
 	
 <body>
@@ -162,15 +162,13 @@ audio {
     }); 
   </script>
 
-  <script>
-    $('a').click(function(e) {
-    e.preventDefault();
-    newLocation = this.href;
-    $('body').fadeOut('slow', newpage);
+<script>
+    $('.navigation-button').click(function() {
+        var destination = $(this).data("link");
+     $("body").fadeOut(500,function(){
+           window.location.replace(destination);
+        });
     });
-    function newpage() {
-    window.location = newLocation;
-    }
-  </script>
+    </script>
 	
 </html>
