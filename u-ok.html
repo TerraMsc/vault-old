@@ -18,8 +18,9 @@
   <style>
     /* HTML & BODY */
     #body-wrap {
-        display:none;
+        display: none;
         background-color: #fff;
+        z-index: 9999;
     }
 
     html,
@@ -249,15 +250,6 @@
         $(document).ready(function(){
             $('#body-wrap').fadeIn(500);
         });
-    </script>
-
-    <script>
-      $(document).ready(function() {
-        /*! Fades in whole page on load */
-        $('body').css('display', 'none');
-        $('body').fadeIn(500);
-      });
-
     </script>
 
     <script>
