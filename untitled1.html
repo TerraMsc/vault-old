@@ -8,9 +8,14 @@
   </head>
 	
   <style>
+	  
+	    body:not(.loaded) {
+    display: none; 
+  }
+	  
 * {
    box-sizing: border-box;
-  }
+	  }
 
 html,
 body {
@@ -133,12 +138,13 @@ audio {
   }
 }
   </style>
-
-<div id="navigation"> 
+	
+<body onload="document.body.classList.add('loaded')">
+	
+	<div id="navigation"> 
     <button class="navigation-button" data-link="https://terramsc.github.io/vault/"></button>
 </div>
 	
-<body>
     <div id="container">
       <div id="one">
         <img src="https://i.imgur.com/Z6CVXRr.png">
