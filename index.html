@@ -15,17 +15,9 @@
 <style>
 
   /* HTML & BODY */
-  
-   #body-wrapper {
+    #body-wrapper {
         display: none;
-     width: 100%;
-     height: 100%;
-     background-color: #000;
     }
-  
-      body:not(.loaded){
-  display:none;
-}
   
   html,
   body {
@@ -234,7 +226,7 @@
 
 </style>
 
-<body onload="document.body.classList.add('loaded')">
+<body>
   
   <div id="body-wrapper">
 
@@ -294,7 +286,6 @@
             setInterval(switchSlide, 2000);
         });
     </script>
-  </script>
   
     <script>
   $(document).ready(function(){
