@@ -10,22 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
   
-      <script>
-    $(window).load(function() {
-  $("body").removeClass("preload");
-});
-</script>
-  
   </head>
 
 <style>
 
   /* HTML & BODY */
   
-  body:not(.loaded) {
-    display: none; 
-  }
-
+   #body-wrapper {
+        display: none;
+     width: 100%;
+     height: 100%;
+    }
+  
+      body:not(.loaded){
+  display:none;
+}
+  
   html,
   body {
     margin: 0;
@@ -234,6 +234,8 @@
 </style>
 
 <body onload="document.body.classList.add('loaded')">
+  
+  <div id="body-wrapper">
 
   <!-- LOGOTYPE -->
 
@@ -278,10 +280,22 @@
       </div>
     </div>
   </div>
+    
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
   <script>
+    <script>
+        $(window).load(function(){
+            $('#body-wrapper').hide();
+            $('#body-wrapper').fadeIn(1000);
+            setInterval(switchSlide, 2000);
+        });
+    </script>
+  </script>
+  
+    <script>
   $(document).ready(function(){
   $('.navigation-button-info').click(function(){
     $('.pops').fadeIn();
@@ -290,14 +304,6 @@
     $('.pops').fadeOut();
   });
   });
-  </script>
-
-  <script>
-    $(document).ready(function(){
-    /*! Fades in whole page on load */
-    $('body').css('display', 'none');
-    $('body').fadeIn(500);
-    }); 
   </script>
 
   <script>
