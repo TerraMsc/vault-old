@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
+    
   </head>
 
   <style>
@@ -68,7 +69,7 @@
 
     /* GO BACK BUTTON */
 
-    input[type=button] {
+    button {
       margin: 20px 0px 0px 20px;
       padding: 0;
       position: fixed;
@@ -85,7 +86,7 @@
       z-index: 99;
     }
 
-    input[type=button]:hover {
+    button:hover {
       cursor: pointer;
     }
 
@@ -163,9 +164,6 @@
     /* MOBILE */
 
     @media only screen and (max-width: 1000px) {
-      .subtitle {
-        font-size: @42px;
-      }
 
       input[type=button] {
         height: 60px;
@@ -214,7 +212,7 @@
 
   <body onload="document.body.classList.add('loaded')">
     
-    <div class="button" data-link="https://terramsc.github.io/vault/"><input type="button" id="close" value=""></div>
+    <div class="button"><button data-link="https://terramsc.github.io/vault/"></div>
 
     <div id="somgs">
       <div class="text">best years of my life • by Terra</div>
@@ -238,7 +236,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     
-      <script>
+<script>
     $(document).ready(function(){
     /*! Fades in whole page on load */
     $('body').css('display', 'none');
@@ -246,14 +244,15 @@
     }); 
   </script>
 
-<script>
-$('.button').click(function() {
-    var destination = $(this).data("link");
- $("body").fadeOut(500,function(){
-       window.location.replace(destination);
+  <script>
+    $('.button').click(function() {
+        var destination = $(this).data("link");
+     $("body").fadeOut(500,function(){
+           window.location.replace(destination);
+        });
     });
-});
-</script>
+  </script>
+      
   </body>
 
 </html>
