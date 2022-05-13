@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TERRA.NOSTEREO</title>
+	  
+	<meta name="theme-color" content="#9ab9d1"/>
+	  
   </head>
 	
   <style>
 	  
-	    body:not(.loaded) {
-    display: none; 
-  }
+    #body-wrapper {
+        display: none;
+    }
 	  
 * {
    box-sizing: border-box;
@@ -139,7 +142,9 @@ audio {
 }
   </style>
 	
-<body onload="document.body.classList.add('loaded')">
+<body>
+	
+	<div id="body-wrapper">
 	
 	<div id="navigation"> 
     <button class="navigation-button" data-link="https://terramsc.github.io/vault/"></button>
@@ -156,16 +161,19 @@ audio {
       </div>
       <div id="three"><img src="https://i.imgur.com/93F1RFH.png"></div>
     </div>
+		
+	</div>
+	
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
   <script>
-    $(document).ready(function(){
-    /*! Fades in whole page on load */
-    $('body').css('display', 'none');
-    $('body').fadeIn(500);
-    }); 
+        $(window).load(function(){
+            $('#body-wrapper').hide();
+            $('#body-wrapper').fadeIn(1000);
+            setInterval(switchSlide, 2000);
+        });
   </script>
 
 <script>
@@ -175,6 +183,6 @@ audio {
            window.location.replace(destination);
         });
     });
-    </script>
+</script>
 	
 </html>
