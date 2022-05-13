@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    
+
     <title>U ok?</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,24 +14,26 @@
     <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    
-    <script>
-        $(document).ready(function(){
-        $('body').css('display', 'none');
-        }); 
-      </script>
-
   </head>
 
   <style>
-
     /* HTML & BODY */
-    
+
     body:not(.loaded) {
-  display: none;
-}
-    
-    html, body {margin: 0; height: 100%; overflow: hidden}
+      display: none;
+    }
+
+    #body-wrap {
+        display:none;
+        background-color: #fff;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden
+    }
 
     html,
     body {
@@ -41,12 +43,12 @@
     }
 
     html {
-        background-color: #000;
+      background-color: #000;
     }
 
     body {
       padding-bottom: env(safe-area-inset-bottom);
-      background-color: #fff;
+      background-color: #000;
     }
 
     /* MAIN CENTERED DIV WITH A PIC */
@@ -121,7 +123,7 @@
       font-size: 12px;
       text-align: center;
     }
-    
+
     /* AUDIO PLAYER */
 
     audio {
@@ -132,10 +134,10 @@
     #audiodiv {
       min-height: 40px;
     }
-    
-        
+
+
     /* AUDIO PLAYER CUSTOM COLORS */
-    
+
     audio {
       filter: grayscale(1);
     }
@@ -150,7 +152,7 @@
       padding-top: 50px;
       position: fixed;
     }
-    
+
     .text {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
@@ -159,7 +161,7 @@
       padding-bottom: 10px;
       text-align: center;
     }
-    
+
     #lnd {
       background-image: url("https://i.imgur.com/Rdtaz0k.png");
       background-position: center;
@@ -211,6 +213,7 @@
       #somgs2 {
         bottom: 30px;
       }
+
       audio {
         filter: grayscale(initial);
       }
@@ -218,56 +221,68 @@
 
   </style>
 
-<body onload="document.body.classList.add('loaded')">
-    
-    <div class="button" data-link="https://terramsc.github.io/vault/"><button data-link="https://terramsc.github.io/vault/"></div>
+  <body onload="document.body.classList.add('loaded')">
 
-    <div id="somgs">
-      <div class="text">best years of my life • by Terra</div>
-      <audio controls="controls">
-  <source src="https://docs.google.com/uc?export=download&id=1kV7A3jcBEGoYke0uY0ZMDTA62Q_brCaS">
-</audio>
-      
-    </div>
+    <div id="body-wrap">
 
-    <div id="somgs2">
-      <div class="text">best years of my life • by Terra</div>
-      <div id="audiodiv">
-      <audio controls="controls">
-  <source src="https://docs.google.com/uc?export=download&id=1kV7A3jcBEGoYke0uY0ZMDTA62Q_brCaS">
-</audio>
+      <div class="button" data-link="https://terramsc.github.io/vault/"><button data-link="https://terramsc.github.io/vault/"></div>
+
+      <div id="somgs">
+        <div class="text">best years of my life • by Terra</div>
+        <audio controls="controls">
+          <source src="https://docs.google.com/uc?export=download&id=1kV7A3jcBEGoYke0uY0ZMDTA62Q_brCaS">
+        </audio>
+
       </div>
+
+      <div id="somgs2">
+        <div class="text">best years of my life • by Terra</div>
+        <div id="audiodiv">
+          <audio controls="controls">
+            <source src="https://docs.google.com/uc?export=download&id=1kV7A3jcBEGoYke0uY0ZMDTA62Q_brCaS">
+          </audio>
+        </div>
+      </div>
+
+      <div id="lnd">
+      </div>
+
     </div>
 
-        <div id="lnd">
-    </div>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    
-<script>
-    $(document).ready(function(){
-    /*! Fades in whole page on load */
-    $('body').css('display', 'none');
-    $('body').fadeIn(500);
-    }); 
-  </script>
 
-  <script>
-    $('.button').click(function() {
-        var destination = $(this).data("link");
-     $("body").fadeOut(500,function(){
-           window.location.replace(destination);
+    <script>
+        $(document).ready(function(){
+            $('#body-wrap').fadeIn(500);
         });
-    });
-  </script>
+    </script>
 
-<script type="text/javascript">
-    document.getElementById("button").onclick = function() {
-      location.href = "https://terramsc.github.io/vault/index.html";
-    };
+    <script>
+      $(document).ready(function() {
+        /*! Fades in whole page on load */
+        $('body').css('display', 'none');
+        $('body').fadeIn(500);
+      });
 
-  </script>
-      
+    </script>
+
+    <script>
+      $('.button').click(function() {
+        var destination = $(this).data("link");
+        $("body").fadeOut(500, function() {
+          window.location.replace(destination);
+        });
+      });
+
+    </script>
+
+    <script type="text/javascript">
+      document.getElementById("button").onclick = function() {
+        location.href = "https://terramsc.github.io/vault/index.html";
+      };
+
+    </script>
+
   </body>
 
 </html>
