@@ -17,7 +17,7 @@
 
   <style>
     /* HTML & BODY */
-    #body-wrap {
+    #body-wrapper {
         display: none;
         background-color: #fff;
     }
@@ -66,7 +66,7 @@
 
     /* MAIN DIV */
 
-        #landing {
+      .background-artwork {
       background-image: url("https://i.imgur.com/Rdtaz0k.png");
       background-position: center;
       background-repeat: no-repeat;
@@ -84,9 +84,8 @@
       position: fixed;
       height: 80px;
       width: 80px;
-      background: #fff;
+      background-color: #fff;
       border: 2px solid #fff;
-      font-weight: 1000;
       font-size: 48px;
       background-image: url("https://i.imgur.com/Va5F3e1.png");
       background-repeat: no-repeat;
@@ -101,7 +100,7 @@
 
     /* SOMGS */
 
-    #somgs {
+    #audio-div {
       font-family: 'Press Start 2P', cursive;
       color: white;
       position: fixed;
@@ -111,7 +110,7 @@
       transform: translateX(-50%);
     }
 
-    #somgs2 {
+    #audio-div-2 {
       font-family: 'Press Start 2P', cursive;
       color: white;
       position: fixed;
@@ -152,7 +151,7 @@
       position: fixed;
     }
 
-    .text {
+    .credits {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 16px;
@@ -171,7 +170,7 @@
         cursor: pointer;
       }
 
-      #somgs {
+      #audio-div {
         display: none;
       }
 
@@ -180,11 +179,11 @@
         width: 100%;
       }
 
-      #somgs {
+      #audio-div {
         display: none;
       }
 
-      #somgs2 {
+      #audio-div-2 {
         display: initial;
         left: 0;
         right: 0;
@@ -200,7 +199,7 @@
     }
 
     @supports (-webkit-touch-callout: none) {
-      #somgs2 {
+      #audio-div-2 {
         bottom: 30px;
       }
 
@@ -213,20 +212,20 @@
 
   <body>
 
-    <div id="body-wrap">
+    <div id="body-wrapper">
 
       <div class="button" data-link="https://terramsc.github.io/vault/"><button data-link="https://terramsc.github.io/vault/"></div>
 
-      <div id="somgs">
-        <div class="text">best years of my life • by Terra</div>
+      <div id="audio-div">
+        <div class="credits">best years of my life • by Terra</div>
         <audio controls="controls">
           <source src="https://docs.google.com/uc?export=download&id=1kV7A3jcBEGoYke0uY0ZMDTA62Q_brCaS">
         </audio>
 
       </div>
 
-      <div id="somgs2">
-        <div class="text">best years of my life • by Terra</div>
+      <div id="audio-div-2">
+        <div class="credits">best years of my life • by Terra</div>
         <div id="audiodiv">
           <audio controls="controls">
             <source src="https://docs.google.com/uc?export=download&id=1kV7A3jcBEGoYke0uY0ZMDTA62Q_brCaS">
@@ -234,7 +233,7 @@
         </div>
       </div>
 
-      <div id="landing"></div>
+      <div class="background-artwork"></div>
 
     </div>
 
@@ -242,7 +241,7 @@
 
     <script>
         $(document).ready(function(){
-            $('#body-wrap').fadeIn(500);
+            $('#body-wrapper').fadeIn(500);
         });
     </script>
 
