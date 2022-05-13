@@ -24,6 +24,8 @@
     
    #body-wrapper {
         display: none;
+     width: 100%;
+     height: 100%;
     }
     
     body:not(.loaded){
@@ -361,7 +363,9 @@
 
     <script>
         $(window).load(function(){
-            $('#body-wrapper').fadeIn(500);
+            $('#body-wrapper').hide();
+            $('#body-wrapper').fadeIn(1000);
+            setInterval(switchSlide, 2000);
         });
     </script>
 
