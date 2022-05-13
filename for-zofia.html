@@ -94,6 +94,24 @@
       background-size: 100%;
       z-index: 99;
     }
+    
+    .button-wrap {
+      margin: 20px 0px 0px 20px;
+      padding: 0;
+      position: fixed;
+      height: 80px;
+      width: 80px;
+      border-radius: 100px;
+      background: #B16791;
+      border: 1px solid #B16791;
+      font-weight: 1000;
+      font-size: 48px;
+      opacity: 0;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 100%;
+      z-index: 99; 
+    }
 
     input[type=button]:hover {
       cursor: pointer;
@@ -289,7 +307,7 @@
 
 <body onload="document.body.classList.add('loaded')">
 
-  <div class="button"><button class="button" value="" data-link="https://terramsc.github.io/vault/"></div>
+  <div class="button-wrap"><button class="button" value="" data-link="https://terramsc.github.io/vault/"></div>
 
     <div class="outer">
       <div class="middle">
