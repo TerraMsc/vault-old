@@ -18,6 +18,10 @@
 
     /* HTML & BODY */
     
+    body:not(.loaded) {
+    display: none; 
+  }
+    
     html, body {margin: 0; height: 100%; overflow: hidden}
 
     html,
@@ -208,11 +212,9 @@
 
   </style>
 
-  <body>
-
+  <body onload="document.body.classList.add('loaded')">
+    
     <div class="button" data-link="https://terramsc.github.io/vault/"><input type="button" id="close" value=""></div>
-
-
 
     <div id="somgs">
       <div class="text">best years of my life • by Terra</div>
