@@ -28,7 +28,7 @@
 
   <div id="body-wrapper">
 
-    <div class="button-wrap"><button class="button" value="" data-link="https://terramsc.github.io/vault/"></div>
+    <div class="button-wrap"><button class="button-back" value="" data-link="https://terramsc.github.io/vault/"></div>
 
     <div class="outer">
       <div class="middle">
@@ -112,7 +112,7 @@
   <script src="js/player.js" type="module"></script>
 
   <script>
-    $('.button').click(function() {
+    $('.button-back').click(function() {
       var destination = $(this).data("link");
       $("body").fadeOut(500, function() {
         window.location.replace(destination);
