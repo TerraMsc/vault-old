@@ -1,316 +1,34 @@
 <html>
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
-    <title>For Zofia</title>
-    <meta name="apple-mobile-web-app-title" content="I couldn't say goodbye." />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>For Zofia</title>
+  <meta name="apple-mobile-web-app-title" content="I couldn't say goodbye." />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
-    
-    <meta name="theme-color" content="#B16791"/>
-    
-  </head>
+  <link rel="icon" href="https://i.imgur.com/tgsKcru.png">
 
-  <style>
-    
-    /* HTML & BODY */
-    
-   #body-wrapper {
-        display: none;
-     width: 100%;
-     height: 100%;
-     background-color: #B16791;
-    }
-    
-    body:not(.loaded){
-  display:none;
-}
-    
-    html, body {margin: 0; height: 100%; overflow: hidden}
+  <link rel="stylesheet" href="css/fade-in-page.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/for-zofia.css">
 
-    html,
-    body {
-      margin: 0;
-      height: 100%;
-      font-family: 'Inter', sans-serif;
-    }
+  <meta name="theme-color" content="#B16791" />
 
-    html {
-        background-color: #000;
-    }
-
-    body {
-        background-color: #000;
-    }
-
-    /* MAIN CENTERED DIV WITH A PIC */
-
-    .outer {
-      display: table;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
-
-    .middle {
-      display: table-cell;
-      vertical-align: middle;
-    }
-
-    .inner {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-      color: white;
-      /* Whatever width you want */
-    }
-
-    /* GO BACK BUTTON */
-
-    .button {
-      margin: 20px 0px 0px 20px;
-      padding: 0;
-      position: fixed;
-      height: 80px;
-      width: 80px;
-      border-radius: 100px;
-      background: #B16791;
-      border: 1px solid #B16791;
-      font-weight: 1000;
-      font-size: 48px;
-      background-image: url("https://i.imgur.com/mojAVpi.gif");
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: 100%;
-      z-index: 99;
-    }
-    
-    .button-wrap {
-      padding: 0;
-      position: fixed;
-      height: 80px;
-      width: 80px;
-      border-radius: 100px;
-      background: #B16791;
-      border: 1px solid #B16791;
-      font-weight: 1000;
-      font-size: 48px;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: 100%;
-      z-index: 98; 
-    }
-
-    button:hover {
-      cursor: pointer;
-    }
-
-    /* SOMGS */
-
-    #somgs {
-      font-family: 'Press Start 2P', cursive;
-      color: white;
-      position: fixed;
-      bottom: 35px;
-      width: 600px;
-      max-width: calc(100% - 80px);
-      text-align: center;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-
-    #somgs2 {
-      font-family: 'Press Start 2P', cursive;
-      color: white;
-      position: fixed;
-      display: none;
-      bottom: 35px;
-      left: 40px;
-      right: 40px;
-      width: 600px;
-      max-width: calc(100% - 80px);
-      align-items: center;
-      text-align: center;
-    }
-    
-    /* AUDIO PLAYER */
-
-    audio {
-      border-radius: 100px;
-      width: 100%;
-    }
-
-    #audiodiv {
-      min-height: 40px;
-    }
-
-    /* VERSION HISTORY POPUP */
-
-    .tooltip-wrap {
-      width: 600px;
-    }
-
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 2px solid white;
-      color: white;
-      padding-top: 20px;
-    }
-
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 350px;
-      height: 285px;
-      color: #B16791;
-      text-align: center;
-      /* Position the tooltip */
-      position: absolute;
-      z-index: 1;
-      bottom: 100%;
-      left: 50%;
-      margin-left: -175px;
-      background-image: url("https://i.imgur.com/1KSERI4.png");
-      background-size: 350px;
-      background-position: bottom;
-      background-repeat: no-repeat;
-      overflow: scroll;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-
-    .tooltiptext {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: scroll;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-
-    .popup-text {
-      position: absolute;
-      top: 0;
-      max-height: 250px;
-      overflow: scroll;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-
-    .popup-text a {
-      color:#B16791;
-      text-decoration: none;
-    }
-
-    .tooltiptext::-webkit-scrollbar {
-      display: none;
-    }
-
-    .tooltip::-webkit-scrollbar {
-      display: none;
-    }
-
-    .popup-text::-webkit-scrollbar {
-      display: none;
-    }
-    
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-    }
-
-    .popup-img {
-      width: 600px;
-    }
-
-    /* OTHER */
-
-    #top_text {
-      font-family: 'Press Start 2P', cursive;
-      color: white;
-      width: 100%;
-      text-align: center;
-      padding-top: 50px;
-      position: fixed;
-      font-size: 16px;
-    }
-
-    /* MOBILE */
-
-    @media only screen and (max-width: 1000px) {
-
-      .button {
-        cursor: pointer;
-      }
-
-      .tooltip-wrap {
-      width: 100%;
-      }
-
-      #somgs {
-        display: none;
-      }
-
-      audio {
-        border-radius: 100px;
-        width: 100%;
-      }
-
-      #somgs {
-        display: none;
-      }
-
-      #somgs2 {
-        display: initial;
-        left: 0;
-        right: 0;
-        padding: 0px 40px 0px 40px;
-        font-size: 12px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .tooltip {
-        cursor: pointer;
-        font-size: 12px;
-      }
-
-      .popup-text {
-        font-size: 16px;
-      }
-
-      #top_text {
-        text-align: right;
-        right: 40px;
-        font-size: 16px;
-      }
-    }
-
-    @supports (-webkit-touch-callout: none) {
-      #somgs2 {
-        bottom: 30px;
-      }
-    }
-
-  </style>
+</head>
 
 <body onload="document.body.classList.add('loaded')">
-  
+
   <div id="body-wrapper">
 
-  <div class="button-wrap"><button class="button" value="" data-link="https://terramsc.github.io/vault/"></div>
+    <div class="button-wrap"><button class="button" value="" data-link="https://terramsc.github.io/vault/"></div>
 
     <div class="outer">
       <div class="middle">
@@ -334,7 +52,8 @@
 
       <p>"I couldn't say goodbye"</p>
       <audio controls="controls">
-        <source src="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu"></audio>
+        <source src="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu">
+      </audio>
     </div>
 
     <div id="somgs2">
@@ -348,36 +67,56 @@
           </span>
         </div>
       </div>
-      
-      <p>"I couldn't say goodbye"</p>
-      <div id="audiodiv">
-        <audio controls="controls">
-          <source src="https://docs.google.com/uc?export=download&id=1eFnqeF0wmRhAXwG8UrYWWpYgiyteEbnu"></audio>
-      </div>
+
+      <p>"I couldn't tell you - goodbye"</p>
+
+        <div id="audiodiv">
+          <!-- PLAYER -->
+          <div id="player">
+            <!-- CHANGE PLAYER COLOR -->
+            <div id="color-switch"><img src="https://i.imgur.com/SYyiJUa.png">
+
+              <div id="volume-slider-container">
+                <output id="volume-output">100</output>
+                <div id="volume-slider-squish">
+                  <input type="range" id="volume-slider" max="100" value="70">
+                </div>
+                <button id="mute-icon"></button>
+              </div>
+
+              <div id="audio-player-container">
+                <audio src="https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3" preload="metadata" loop></audio>
+
+                <button id="play-icon"></button>
+                <span id="current-time" class="time">0:00</span>
+                <input type="range" id="seek-slider" max="100" value="0">
+                <span id="duration" class="time">0:00</span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <div id="audioshadow"><img src="https://i.imgur.com/zlsI7as.png"></div>
+
     </div>
 
     <div id="top_text">
       sleep tight
     </div>
-  
+
   </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    <script>
-        $(window).load(function(){
-            $('#body-wrapper').hide();
-            $('#body-wrapper').fadeIn(1000);
-            setInterval(switchSlide, 2000);
-        });
-    </script>
+  <script src="js/player.js" type="module"></script>
 
   <script>
     $('.button').click(function() {
-        var destination = $(this).data("link");
-     $("body").fadeOut(500,function(){
-           window.location.replace(destination);
-        });
+      var destination = $(this).data("link");
+      $("body").fadeOut(500, function() {
+        window.location.replace(destination);
+      });
     });
   </script>
 
@@ -385,7 +124,6 @@
     document.getElementById("button").onclick = function() {
       location.href = "https://terramsc.github.io/vault/index.html";
     };
-
   </script>
 
 </body>
