@@ -57,7 +57,7 @@ body {
 }
 
 /* GO BACK BUTTON */
-.button {
+.button-back {
   margin: 20px 0px 0px 20px;
   padding: 0;
   position: fixed;
@@ -233,7 +233,7 @@ audio {
 
 /* MOBILE */
 @media only screen and (max-width: 1000px) {
-  .button {
+  .button-back {
     cursor: pointer;
   }
 
