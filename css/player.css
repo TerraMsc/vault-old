@@ -1,3 +1,30 @@
+*:focus {
+  outline: none;
+}
+
+#audioshadow {
+  position: fixed;
+  bottom: 0;
+}
+
+#audioshadow img {
+  max-height: 1000px;
+  padding-bottom: 80px;
+  width: 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+  max-width: 600px;
+}
+
+#audiodiv:hover ~ #audioshadow img {
+  opacity: 1;
+}
+
+#volume-slider-container {
+  z-index: 1;
+}
+
 /* COLOR OVERLAY */
 #color-switch {
   width: 100%;
@@ -289,23 +316,23 @@ input[type="range"]:active::-ms-thumb {
   height: 4px;
   float: left;
   /*   background-color: blue; */
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #volume-slider::-webkit-slider-runnable-track {
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.5);
   float: left;
   height: 4px;
 }
 
 #volume-slider::-moz-range-track {
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.5);
   float: left;
   height: 4px;
 }
 
 #volume-slider::-ms-fill-upper {
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.5);
   float: left;
   height: 4px;
 }
